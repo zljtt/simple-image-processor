@@ -1,0 +1,93 @@
+GROUP MEMBER
+Zhijian Wang
+Bitan Wu
+
+-----------------------------------------------------------
+Updated 2021/11/10
+-----------------------------------------------------------
+
+COMMANDS
+To use the image processor in a console:
+- Start the main with no command-line option. 
+- Type in the command after the system prompts you "Please enter command:"
+- Then enter the command in a whole line, that is, finish the command line before pressing ENTER / a command cannot be seperated into two lines.
+- Command keywords are case sensitive, no upper-case letters in all keywords of commands (keyword means the first token in a command, such as "save").
+There are seven types of command:
+- load [location of the file to load] [name of the image to be stored in the processor]
+	- save the given image from the processor to the file system.
+- save [location of the file to save] [name of the image that is stored in the processor]
+	- load the given image from the file system to the processor
+- color-transfrom [operation type] [name of the original image] [name of the created image] 
+	- There are different color-transform opeation types:
+		red : create a image with the red-component of the original image.
+		green : create a image with the green-component of the original image.
+		blue : create a image with the blue-component of the original image.
+		value : create a image with the value-component of the original image.
+		intensity : create a image with the intensity-component of the original image.
+		luma : create a image with the luma-component of the original image. In other words, it is the greyscale command in the homework requirement.
+		sepia : create a image with the sepia tone of the original image.
+- filter [operation type] [name of the original image] [name of the created image] 
+	- There are different filter opeation types:
+			blur : create a image of the original image that is blurred.
+			sharpen : create a image of the original image that is sharpened.
+- flip vertical/horizontal [name of the original image] [name of the created image]
+	- create a new image with all pixel of the original image flipped vertically or horizontally
+- brighten [value of brightness to increase or decrease] [name of the original image] [name of the created image]
+	- negative value indicates darkening the image.
+	- positive value indicates brightening the image.
+- copy [name of the original image] [name of the created image]
+	- copy the original image, and store a clone in the processor with the given name.
+- print [name of the image]/all
+	- print the image if the second argument is the name of the image.
+	- print all images if the second argument is "all".
+
+To use the image processor with a script file as a command-line option.
+- Start the main with command-line option. "-file name-of-script.txt", where [name-of-script.txt] is the name of the script command file.
+- The file should have one command each line, with no "new line" character (\n or \r\n) at the end of the last line.
+- The file should not have any other text other than commands.
+
+** One thing worth notice is that the greyscale command in the last build has now changed into color-transform command. **
+** The greyscale command mentioned in the homework requirement is "color-transform luma image-from image-to" in this program. **
+
+
+Here are some example commands:
+load Koala.ppm koala-ppm
+load Koala.jpg koala-jpg
+load Koala.png koala-png
+load Koala.bmp koala-bmp
+color-transform red koala-ppm koala-red
+color-transform green koala-jpg koala-green
+color-transform blue koala-png koala-blue
+color-transform intensity koala-bmp koala-intensity
+color-transform value koala-ppm koala-value
+color-transform luma koala-jpg koala-luma
+color-transform sepia koala-png koala-sepia
+filter blur koala-bmp koala-blur
+filter blur koala-blur koala-super-blur
+filter blur koala-super-blur koala-super-blur
+filter blur koala-super-blur koala-super-blur
+filter sharpen koala-ppm koala-sharpen
+flip horizontal koala-jpg koala-horizontal
+flip vertical koala-png koala-vertical
+brighten 50 koala-bmp koala-brighter
+brighten -50 koala-ppm koala-darker
+copy koala-ppm koala-copy
+print koala-darker
+print all
+save res/koala-copy.ppm koala-copy
+save res/koala-copy.jpg koala-copy
+save res/koala-copy.png koala-copy
+save res/koala-copy.bmp koala-copy
+save res/koala-red.png koala-red
+save res/koala-green.png koala-green
+save res/koala-blue.png koala-blue
+save res/koala-intensity.png koala-intensity
+save res/koala-value.jpg koala-value
+save res/koala-luma.jpg koala-luma
+save res/koala-sepia.jpg koala-sepia
+save res/koala-super-blur.jpg koala-super-blur
+save res/koala-sharpen.jpg koala-sharpen
+save res/koala-horizontal.bmp koala-horizontal
+save res/koala-vertical.bmp koala-vertical
+save res/koala-brighter-by-50.bmp koala-brighter
+save res/koala-darker-by-50.bmp koala-darker

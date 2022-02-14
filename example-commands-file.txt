@@ -1,0 +1,39 @@
+load Koala.ppm koala-ppm
+load Koala.jpg koala-jpg
+load Koala.png koala-png
+load Koala.bmp koala-bmp
+color-transform red koala-ppm koala-red
+color-transform green koala-jpg koala-green
+color-transform blue koala-png koala-blue
+color-transform intensity koala-bmp koala-intensity
+color-transform value koala-ppm koala-value
+color-transform luma koala-jpg koala-luma
+color-transform sepia koala-png koala-sepia
+filter blur koala-bmp koala-blur
+filter blur koala-blur koala-super-blur
+filter blur koala-super-blur koala-super-blur
+filter blur koala-super-blur koala-super-blur
+filter sharpen koala-ppm koala-sharpen
+flip horizontal koala-jpg koala-horizontal
+flip vertical koala-png koala-vertical
+brighten 50 koala-bmp koala-brighter
+brighten -50 koala-ppm koala-darker
+copy koala-ppm koala-copy
+print all
+save res/koala-copy.ppm koala-copy
+save res/koala-copy.jpg koala-copy
+save res/koala-copy.png koala-copy
+save res/koala-copy.bmp koala-copy
+save res/koala-red.png koala-red
+save res/koala-green.png koala-green
+save res/koala-blue.png koala-blue
+save res/koala-intensity.png koala-intensity
+save res/koala-value.jpg koala-value
+save res/koala-luma.jpg koala-luma
+save res/koala-sepia.jpg koala-sepia
+save res/koala-super-blur.jpg koala-super-blur
+save res/koala-sharpen.jpg koala-sharpen
+save res/koala-horizontal.bmp koala-horizontal
+save res/koala-vertical.bmp koala-vertical
+save res/koala-brighter-by-50.bmp koala-brighter
+save res/koala-darker-by-50.bmp koala-darker
